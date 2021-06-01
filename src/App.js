@@ -1,7 +1,7 @@
 import Axios from "axios";
 import {useState} from "react";
 import "./App.css";
-import {RecipeTile} from './components/recipe-tile';
+import RecipeTile from '../src/components/recipe-tile/RecipeTile';
 
 function App() {
   const [query, setquery]= useState("");
@@ -43,14 +43,12 @@ onChange={(e)=> setquery(e.target.value)}
       </form>
       
       <div className="app__recipes">
-       
-         { recipes.map((recipe) => {
+        {recipes !== [] &&
+          recipes.map((recipe) => {
             return <RecipeTile recipe={recipe} />;
           })}
-
       </div>
     </div>
-  
   );
 }
 export default App;
