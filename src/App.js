@@ -16,13 +16,26 @@ const YOUR_APP_KEY
     var result = await Axios.get(url)  ;
     console.log(result.data);
   }
+  const onSubmit =(e) =>{
+    e.preventDefault();
+    // will prevent reloading of page
+    getRecipes();
+
+  }
   return (
     <div className="app">
-      <h1 onClick={getRecipes}>Food Recipe Plaza</h1>
-      <form className="app__searchForm">
-<input type ="text" placeholder ="enter ingridient"
-value ={query} onChange={(e)=> setquery(e.target.value)}
-></input>
+      <h1>Food Recipe Plaza</h1>
+      <form className="app__searchForm" onSubmit={onSubmit}>
+<input
+className="app__input"
+type ="text"
+ placeholder ="enter ingridient"
+value ={query} 
+onChange={(e)=> setquery(e.target.value)}
+/>
+
+  <input className="app__submit"
+  type="submit" value ="Search"  />
       </form>
     </div>
   
