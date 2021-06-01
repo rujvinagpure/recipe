@@ -1,8 +1,9 @@
 import React from 'react'
 import { v4 as uuidv4 } from "uuid";
-
+import "../recipe-tile/style.css";
 export default function RecipeTile({ recipe }) {
     return (
+        recipe["recipe"]["image"].match(/\.(jpeg|jpg|gif|png)$/) != null && (
         <div className="recipeTile">
           <img className="recipeTile__img"
            src={recipe["recipe"]["image"]} />
@@ -11,7 +12,7 @@ export default function RecipeTile({ recipe }) {
           {recipe["recipe"]["label"]}
         </p>
       </div>
-
+        )
   );
 }
 
