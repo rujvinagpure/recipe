@@ -44,9 +44,10 @@
   grid-template-columns: 220px 220px;
   align-items: baseline;
 }
-.app_healthLabel{
+.app_healthLabels{
   padding: 7px 8px;
   margin-left: 6px;
   border-radius: 4px;
-  font-size: 15px;
+  
+
 }
